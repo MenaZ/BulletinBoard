@@ -1,0 +1,13 @@
+html
+	head
+		title Bulletin board
+	body
+		
+		h1 Bulletin board
+		p Write a message here
+		form(method='POST' action='/postform')
+			input(type='text', name='title')
+			br
+			input(type='text', name='body')
+			br
+			input(type='submit' value='Post')
