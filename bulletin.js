@@ -10,7 +10,7 @@ const app = require('express')();
 const bodyParser = require('body-parser');
 
 
-var connection = 'postgres://' + 'postgres' + ':' + '12345678' +'@localhost/bulletinboard';
+connectionString = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/bulletinboard';
 
 
 app.set('views', 'views');
@@ -26,7 +26,7 @@ app.get('/', (request,response) => {
 
 // post req which we can use to post the message. this needs a route of the posted message,
 app.post('/postform',(request,response) =>{
-	pg.connect(connection, (err, client, done) => {
+	pg.connect(connectionString, (err, client, done) => {
 		if (err) {
 		 throw err;
 		}
