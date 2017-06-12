@@ -2,6 +2,12 @@ html
 	head
 		title Bulletin board
 	body
+	       
+	        a(href='/') Add a message
+		br
+		a(href='/postform') See all messages
+		br
+		
 		h1 All posts!
 		each msg in posts
 			p #{msg.title}
